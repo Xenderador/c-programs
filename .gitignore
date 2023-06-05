@@ -1,0 +1,9 @@
+*
+!/**/
+!*.c
+!*.h 
+!*.txt
+!*Makefile
+!.gitignore
+!README.md
+!.clang-format
