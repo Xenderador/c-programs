@@ -3,7 +3,7 @@
 #define N 5
 int top = -1, a[N];
 
-// Initializing the elements to stack
+// Inserting the elements to stack
 
 void push(int x)
 {
