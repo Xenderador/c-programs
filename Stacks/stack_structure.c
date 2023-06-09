@@ -10,7 +10,7 @@ typedef struct stack
     int a[N];
 } stack;
 
-// Initializing the elements to stack
+// Inserting the elements to stack
 
 void push(int x, stack *s)
 {
@@ -63,6 +63,7 @@ void display(stack *s)
 int main()
 {
     struct stack s;
+    s.top = -1;
     int element, item, ch; //'ch' means choice
     while (1)
     {
