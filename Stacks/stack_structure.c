@@ -1,53 +1,60 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define N 5
-int top = -1, a[N];
+
+// Defining Stack Structure
+
+typedef struct stack
+{
+    int top;
+    int a[N];
+} stack;
 
 // Initializing the elements to stack
 
-void push(int x)
+void push(int x, stack *s)
 {
-    if (top == N - 1)
+    if (s->top == N - 1)
     {
         printf("\n Overflow");
     }
     else
     {
         printf("\n The element to be pushed : %d", x);
-        top++;
-        a[top] = x;
+        s->top++;
+        s->a[s->top] = x;
     }
 }
 
 // Deleting an element from stack
 
-void pop()
+void pop(stack *s)
 {
-    if (top == -1)
+    if (s->top == -1)
     {
         printf("\n Underflow");
     }
     else
     {
-        int x = a[top];
+        int x = s->a[s->top];
         printf("\n The deleted item is %d", x);
-        top--;
+        s->top--;
     }
 }
 
 // Displaying the elements
 
-void display()
+void display(stack *s)
 {
-    if (top == -1)
+    if (s->top == -1)
     {
         printf("\n Stack is empty");
     }
     else
     {
-        for (int i = 0; i <= top; i++)
+        for (int i = 0; i <= s->top; i++)
         {
-            printf("%d", a[i]);
+            printf("%d", s->a[i]);
         }
         printf("\n");
     }
@@ -55,7 +62,8 @@ void display()
 
 int main()
 {
-    int s[10], item, ch; //'ch' means choice
+    struct stack s;
+    int element, item, ch; //'ch' means choice
     while (1)
     {
         printf("\n Enter your choice :");
@@ -67,13 +75,13 @@ int main()
         case 1:
             printf("\n Enter the element :");
             scanf("%d", &item);
-            push(item);
+            push(item, &s);
             break;
         case 2:
-            pop();
+            pop(&s);
             break;
         case 3:
-            display();
+            display(&s);
             break;
         case 4:
             exit(0);
