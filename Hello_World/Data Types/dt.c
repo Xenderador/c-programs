@@ -15,6 +15,7 @@ int main()
     // Char datatype
 
     char c = 'J';
+
     printf("\n %d \n %f \n %c", a, b, c);
     return 0;
 }
